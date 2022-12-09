@@ -1,0 +1,20 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const create_page_controller_1 = __importDefault(require("../controllers/pages_controllers/create_page_controller"));
+const delete_page_controller_1 = __importDefault(require("../controllers/pages_controllers/delete_page_controller"));
+const find_page_controller_1 = __importDefault(require("../controllers/pages_controllers/find_page_controller"));
+const modify_page_controller_1 = __importDefault(require("../controllers/pages_controllers/modify_page_controller"));
+const get_pages_controller_1 = __importDefault(require("../controllers/pages_controllers/get_pages_controller"));
+const get_pages_with_subpages_controller_1 = __importDefault(require("../controllers/pages_controllers/get_pages_with_subpages_controller"));
+const pages_router = (0, express_1.Router)();
+pages_router.post('/create_page', (req, res) => (0, create_page_controller_1.default)(req, res));
+pages_router.post('/delete_page', (req, res) => (0, delete_page_controller_1.default)(req, res));
+pages_router.post('/modify_page', (req, res) => (0, modify_page_controller_1.default)(req, res));
+pages_router.get('/find_page', (req, res) => (0, find_page_controller_1.default)(req, res));
+pages_router.get('/get_pages', (req, res) => (0, get_pages_controller_1.default)(req, res));
+pages_router.get('/get_pages_with_subpages', (req, res) => (0, get_pages_with_subpages_controller_1.default)(req, res));
+exports.default = pages_router;

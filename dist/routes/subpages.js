@@ -1,0 +1,20 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const create_subpage_controller_1 = __importDefault(require("../controllers/subpages_controllers/create_subpage_controller"));
+const delete_subpage_controller_1 = __importDefault(require("../controllers/subpages_controllers/delete_subpage_controller"));
+const find_subpage_controller_1 = __importDefault(require("../controllers/subpages_controllers/find_subpage_controller"));
+const get_subpages_controller_1 = __importDefault(require("../controllers/subpages_controllers/get_subpages_controller"));
+const get_subpages_for_page_controller_1 = __importDefault(require("../controllers/subpages_controllers/get_subpages_for_page_controller"));
+const modify_subpage_controller_1 = __importDefault(require("../controllers/subpages_controllers/modify_subpage_controller"));
+const subpages_router = (0, express_1.Router)();
+subpages_router.post('/create_subpage', (req, res) => (0, create_subpage_controller_1.default)(req, res));
+subpages_router.post('/delete_subpage', (req, res) => (0, delete_subpage_controller_1.default)(req, res));
+subpages_router.get('/find_subpage', (req, res) => (0, find_subpage_controller_1.default)(req, res));
+subpages_router.get('/get_subpages_for_page', (req, res) => (0, get_subpages_for_page_controller_1.default)(req, res));
+subpages_router.get('/get_subpages', (req, res) => (0, get_subpages_controller_1.default)(req, res));
+subpages_router.post('/modify_subpage', (req, res) => (0, modify_subpage_controller_1.default)(req, res));
+exports.default = subpages_router;
